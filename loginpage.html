@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+         <title> SignIn/SignUp </title>
+         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta charset="UTF-8">
+         <link rel="stylesheet" href="loginpage.css">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="https://kit.fontawesome.com/4b11ac5a7b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+    <div class="form-box">
+        <h1 id="title">Sign Up</h1>
+        <form>
+            <div class="input-group">
+                <div class="input-field" id="nameField">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" placeholder="Name">
+                </div>
+
+                <div class="input-field" id="dob">
+                    <i class="fa-solid fa-gift"></i>
+                    <input type="date" placeholder="DOB">
+                </div>
+
+                <div class="input-field" id="gender">
+                    <i class="fa-solid fa-person-half-dress"></i>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="Other"> Unknown
+                </div>
+
+                <div class="input-field" id="phone">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="phone" placeholder="Phone No">
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input type="email" placeholder="Email">
+                </div>
+
+                <div class="input-field">
+                    <i class="fa-solid fa-lock"></i>
+                    <input type="password" placeholder="Password">
+                </div>
+                <p>Forgot Password <a href="#"> Click Here!</a></p>
+                
+
+                <div class="button-field">
+                <button type="button" id="Submit">Submit</button>
+                </div>
+            <div class="btn-feild">
+                <button type="button" id="signupBtn">Sign up</button>
+                <button type="button" id="signinBtn" class="disable">Sign in</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+<script>
+let signupBtn = document.getElementById("signupBtn");
+let signinBtn = document.getElementById("signinBtn");
+let nameField = document.getElementById("nameField");
+let dob = document.getElementById("dob");
+let title = document.getElementById("title");
+
+signinBtn.onclick = function(){
+    nameField.style.maxHeight = "0";
+    dob.style.maxHeight = "0";
+    gender.style.maxHeight = "0";
+    phone.style.maxHeight = "0";
+    title.innerHTML = "Sign In";
+    signupBtn.classList.add("disable");
+    signinBtn.classList.remove("disable");
+}
+
+signupBtn.onclick = function(){
+    nameField.style.maxHeight = "60px";
+    dob.style.maxHeight = "60px";
+    gender.style.maxHeight = "60px";
+    phone.style.maxHeight = "60px";
+    title.innerHTML = "Sign Up";
+    signupBtn.classList.remove("disable");
+    signinBtn.classList.add("disable");
+
+}
+</script>
+</body>
+</html>
